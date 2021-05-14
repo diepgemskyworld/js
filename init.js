@@ -10,17 +10,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 $(document).ready(function(){
-    var docRef = db.collection("config").doc("SF");
-
-docRef.get().then((doc) => {
-    if (doc.exists) {
-        alert("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        alert("No such document!");
-    }
-}).catch((error) => {
-    alert("Error getting document:", error);
-});
+    var docRef = db.collection("config").doc("ZdjpUuWcjTjvr9FkiPqe");
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            alert("Document data:", doc.data().color);
+        } else {
+            // doc.data() will be undefined in this case
+            alert("No such document!");
+        }
+    }).catch((error) => {
+        alert("Error getting document:", error);
+    });
     alert('0k')
 })
